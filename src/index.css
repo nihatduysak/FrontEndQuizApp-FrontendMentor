@@ -1,5 +1,6 @@
 @import url('https://fonts.googleapis.com/css2?family=Rubik:wght@300;400;500&display=swap');
 
+
 :root {
   --Light-Grey: #F4F6FA;
   --Dark-Navy: #313E51;
@@ -9,7 +10,7 @@
 
 .dark-theme {
   --Light-Grey: #313E51;
-  --Dark-Navy: #7e8592;
+  --Dark-Navy: #F4F6FA;
   & .switchContainer {
     justify-content: flex-end;
   }
@@ -21,16 +22,21 @@
   box-sizing: border-box;
 }
 
-a {text-decoration: none;}
+a {
+  text-decoration: none;
+}
 
 body {
   background: var(--Light-Grey, #F4F6FA);
   font-family: 'Rubik', sans-serif;
+
 }
+
 
 .container {
   margin: 64px auto;
   width: 1160px;
+  
 }
 
 .welcomePage {
@@ -44,6 +50,7 @@ body {
   display: flex;
   justify-content: flex-end;
   gap: 16px;
+
 }
 
 .switchContainer {
@@ -271,12 +278,10 @@ body {
 
 .finishQuizContainer {
   display: flex;
-  gap: 24px;
+  justify-content: space-between;
 }
 
 .quizComplete {
-  margin-left: 148px;
-  margin-top: 85px;
 
   & .quizStatus {
     color: var(--Dark-Navy, #313E51);
@@ -309,7 +314,6 @@ body {
   border-radius: 24px;
   background: var(--Pure-White, #FFF);
   box-shadow: 0px 16px 40px 0px rgba(143, 160, 193, 0.14);
-  margin-top: 100px;
   width: 564px;
 
   & span {
@@ -335,8 +339,6 @@ body {
   display: flex;
   align-items: center;
   gap: 24px;
-  margin-bottom: 40px;
-  margin-right: 100px;
 
   & p {
     color: var(--Dark-Navy, #313E51);
@@ -359,6 +361,7 @@ body {
   background: var(--Purple, #A729F5);
   box-shadow: 0px 16px 40px 0px rgba(143, 160, 193, 0.14);
   margin-top: 32px;
+  width: 100%;
 
   & p {
     color: var(--Pure-White, #FFF);
@@ -367,5 +370,54 @@ body {
     font-style: normal;
     font-weight: 500;
     line-height: 100%; /* 28px */
+  }
+}
+
+@media (width < 768px) {
+  .container {
+    width: 100%;
+    padding: 0 64px;
+  }
+
+  .hero {
+    flex-direction: column;
+    gap: 63px;
+    margin: 0 auto;
+  }
+
+  .questionHeader {width: 100%;}
+
+  .questionSection{
+    width: 100%;
+    flex-direction: column;
+  }
+
+  .questions{gap: 40px;}
+
+  .progressbarContainer{margin-bottom: 64px;}
+
+  .answers {
+
+    & button {
+      width: 100%;
+
+    }
+  }
+
+  .finishQuizContainer {
+    flex-direction: column;
+  }
+
+  .quizComplete {
+    text-align: justify;
+    margin-bottom: 64px;
+  }
+
+  .playAgainBtn button {
+    width: 100%;
+  }
+
+  .quizScore {
+    width: 100%;
   }
 }
