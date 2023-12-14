@@ -1,12 +1,14 @@
 import Header from "./Header"
+import data from '/data.json';
 
-export default function FinishQuiz({ score }) {
+
+export default function FinishQuiz({ score, currentQuiz }) {
     return (
         <>
             <div className="questionHeader">
                 <div className="questionTitle">
-                    <img src="./src/assets/img/accessibility-icon.svg" alt="Accessibility Icon" />
-                    <p>Accessibility</p>
+                    <img src={currentQuiz.icon} alt={currentQuiz.title} />
+                    <p>{currentQuiz.title}</p>
                 </div>
                 <div className="div">
                     <Header />
@@ -20,8 +22,8 @@ export default function FinishQuiz({ score }) {
                 <div className="scoreBoard">
                     <div className="quizScore">
                         <div className="access">
-                            <img src="./src/assets/img/accessibility-icon.svg" alt="Accessibility Icon" />
-                            <p className="topic">Accessibility</p>
+                            <img src={currentQuiz.icon} alt={currentQuiz.title} />
+                            <p className="topic">{currentQuiz.title}</p>
                         </div>
                         <span>{score}</span>
                         <p>out of 10</p>

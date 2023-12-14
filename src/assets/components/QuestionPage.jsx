@@ -87,7 +87,7 @@ export default function QuestionPage({ currentQuiz, setCurrentQuiz, currentQuest
                 )
                 :
                 (
-                    <FinishQuiz score={score} />
+                    <FinishQuiz score={score} currentQuiz={currentQuiz} />
                 )
             }
         </>
